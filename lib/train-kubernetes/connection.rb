@@ -1,4 +1,4 @@
-require 'kubernetes-client'
+require 'k8s-client'
 require 'train-kubernetes/platform'
 
 module TrainPlugins
