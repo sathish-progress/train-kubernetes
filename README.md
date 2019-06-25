@@ -57,6 +57,14 @@ Families:  cloud, api
 Release:   0.1.0
 ```
 
+## Troubleshooting
+
+If you run into issues installing via `inspec plugin install train-kubernetes`, try:
+
+* Ensure you can cleanly install the `k8s-client` gem version `0.10.0` or greater.  e.g. `gem install k8s-client -v 0.10.0`
+* Ensure that only one version of the `excon` gem is installed.  e.g. `gem list | grep excon`.  If you see two versions, `gem uninstall -v 0.62.0` and
+ remove the older version.
+
 ## Reporting Issues
 
 Bugs, typos, limitations, and frustrations are welcome to be reported through the [GitHub issues page for the train-kubernetes project](https://github.com/bgeesaman/train-kubernetes/issues).
