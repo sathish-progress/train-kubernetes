@@ -42,6 +42,6 @@ Gem::Specification.new do |spec|
   # Do not list inspec as a dependency of the train plugin.
 
   # All plugins should mention train, > 1.4
-  spec.add_dependency 'k8s-client', '0.10.0'
-  spec.add_dependency 'train', '~> 1.4'
+  spec.add_dependency 'k8s-client', '~> 0.10'
+  spec.add_dependency 'train', '~> 3.0'
 end

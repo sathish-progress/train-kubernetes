@@ -5,6 +5,6 @@
 
 module TrainPlugins
   module TrainKubernetes
-    VERSION = '0.1.1'.freeze
+    VERSION = '0.1.3'.freeze
   end
 end

@@ -1,3 +1,4 @@
+require 'train'
 require 'k8s-client'
 require 'train-kubernetes/platform'
 
