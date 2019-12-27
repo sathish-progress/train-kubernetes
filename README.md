@@ -30,7 +30,7 @@ end
 
 ## Preconditions
 
-- InSpec 3 or later.
+- InSpec 3.7+ or 4.x+
 - Ruby 2.4+
 - You have set the env var KUBECONFIG or have a valid ~/.kube/config
 
@@ -39,31 +39,48 @@ end
 
 Train plugins are distributed as gems.  You may choose to manage the gem yourself, but if you are an InSpec user, InSPec can handle it for you.
 
-Simply run:
+First, run:
 
 ```
-$ inspec plugin install train-kubernetes
+gem install train-kubernetes
 ```
 
-Verify the plugin
+Next, run:
 
 ```
-$ inspec detect -t k8s://
+inspec plugin install train-kubernetes
+```
+
+Next, view the `plugins.json`:
+
+```
+vi ~/.inspec/plugins.json
+```
+
+If it has the version set to `"= 0.1.3"`, modify it to `"0.1.3"` and save the file.
+
+Verify the plugin:
+
+```
+inspec plugins list
+```
+
+```
+inspec detect -t k8s://
 
 == Platform Details
 
 Name:      k8s
 Families:  cloud, api
-Release:   0.1.0
+Release:   0.1.3
 ```
 
 ## Troubleshooting
 
 If you run into issues installing via `inspec plugin install train-kubernetes`, try:
 
-* Ensure you can cleanly install the `k8s-client` gem version `0.10.0` or greater.  e.g. `gem install k8s-client -v 0.10.0`
-* Ensure that only one version of the `excon` gem is installed.  e.g. `gem list | grep excon`.  If you see two versions, `gem uninstall -v 0.62.0` and
- remove the older version.
+* Ensure you can cleanly install the `k8s-client` gem version `0.10.4` or greater.  e.g. `gem install k8s-client -v 0.10.4`
+* Ensure that only one version of the `excon` gem is installed.  e.g. `gem list | grep excon`.  If you see two versions, `gem uninstall excon` and remove the older version.
 
 ## Reporting Issues
 
