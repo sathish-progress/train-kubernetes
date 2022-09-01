@@ -9,7 +9,8 @@ module TrainPlugins
 
       def initialize(options)
         super(options)
-
+        @pod = options[:pod]
+        @container = options[:container]
         parse_kubeconfig
         connect
       end
@@ -34,6 +35,14 @@ module TrainPlugins
       def parse_kubeconfig
         kubeconfig_file = @options[:kubeconfig] if @options[:kubeconfig]
         @client = K8s::Client.config(K8s::Config.load_file(File.expand_path(kubeconfig_file)))
+      end
+
+      private
+
+      attr_reader :pod, :container
+
+      def run_command_via_connection(cmd, &_data_handler)
+        KubectlClient.new(pod: pod, container: container).execute(cmd)
       end
     end
   end
