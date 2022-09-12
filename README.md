@@ -1,3 +1,7 @@
+#This repo has moved
+- https://github.com/inspec/train-kubernetes
+- Also the default branch has been changed to `main`.
+
 # Kubernetes transport plugin for Chef Inspec Train
 
 This plugin allows applications that rely on Train to communicate with the Kubernetes API.  For example, InSpec uses this to perform compliance checks against any resource in the Kubernetes API. Train plugins are managed by InSpec CLI.
@@ -97,3 +101,6 @@ If you wish to contribute to this plugin, please use the usual fork-branch-push-
 ### Reference Information
 
 [Plugin Development](https://github.com/inspec/train/blob/master/docs/dev/plugins.md) is documented on the `train` project on GitHub.
+
+### Maintainers
+Currently maintained by Chef Software, Inc. Originally created by [Brad Geesaman](https://github.com/bgeesaman).
